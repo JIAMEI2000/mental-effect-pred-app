@@ -100,6 +100,7 @@ columns_to_keep = ['Hours per day', 'While working', 'Instrumentalist', 'Compose
 # Drop all columns except the ones specified
 df = df[columns_to_keep]
 
+# One-hot Encoding for input variables
 encode = ['While working', 'Instrumentalist', 'Composer', 'Fav genre', 'Exploratory', 'Foreign languages'
                , 'Frequency [Classical]', 'Frequency [Country]', 'Frequency [EDM]', 'Frequency [Folk]', 'Frequency [Gospel]'
                , 'Frequency [Hip hop]', 'Frequency [Latin]', 'Frequency [Lofi]', 'Frequency [Metal]', 'Frequency [Pop]'
@@ -128,5 +129,5 @@ prediction = load_clf.predict(df)
 
 
 st.subheader('Prediction')
-penguins_species = np.array(['Improve', 'No effect', 'Worsen'])
-st.write(penguins_species[prediction])
+mental_effect_cat = np.array(['Improve', 'No effect', 'Worsen'])
+st.write(mental_effect_cat[prediction])
